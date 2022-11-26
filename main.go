@@ -38,12 +38,9 @@ func moveToParentDir(parent string, dirname string) error {
 		s2file.Rename(oldpath, newpath)
 	}
 
-	isEmpty, err := s2dir.IsEmpty(dirname)
-	if err != nil {
+	if isEmpty, err := s2dir.IsEmpty(dirname); err != nil {
 		return err
-	}
-
-	if !isEmpty {
+	} else if !isEmpty {
 		return nil
 	}
 
