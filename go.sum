@@ -1,5 +1,7 @@
-github.com/saasan/go-dir v0.0.0-20220811155032-2250749128b4 h1:aOMVYLmIlEyV4re3k2XSD8fuzxOcYnhoi2w5IkAvWic=
-github.com/saasan/go-dir v0.0.0-20220811155032-2250749128b4/go.mod h1:0Gj5Rp8Zl0RAatviRrHAf7fQDm2Dat4Pm/CereUIelI=
+github.com/saasan/go-s2dir v0.0.0-20221126121107-b73c0ae1eb96 h1:oDvidfPYhC0PXSdHK7jVn418ZKZ7wny6xCEAtyhbAPw=
+github.com/saasan/go-s2dir v0.0.0-20221126121107-b73c0ae1eb96/go.mod h1:hOi4VhwIlrtbOoi71AqqjKOdV2aQRUJ+7URudT04vQw=
+github.com/saasan/go-s2file v0.0.0-20221126123857-0351784bc2b5 h1:MSLaCKPsZofzPsgxJtpiAdgDZv4/dazmwvP9GeJWRDQ=
+github.com/saasan/go-s2file v0.0.0-20221126123857-0351784bc2b5/go.mod h1:0GubqTjd8CYILd9IPM3c33EcY+HGV9D3FEidmIFpdm0=
 github.com/saasan/go-term v0.0.0-20220813181131-2f20e98490b8 h1:I7Ers11AvnafulYkZDuZssv4hrZtSSiymQLZQHK6nKs=
 github.com/saasan/go-term v0.0.0-20220813181131-2f20e98490b8/go.mod h1:CU6vqGBwIHKTeqp9lamB15FrlEKFBqcFzu9srtBv/es=
 golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1 h1:SrN+KX8Art/Sf4HNj6Zcz06G7VEz+7w9tdXTPOZ7+l4=

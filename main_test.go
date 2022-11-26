@@ -5,6 +5,8 @@ import (
 	"os"
 	"path/filepath"
 	"testing"
+
+	"github.com/saasan/go-s2file"
 )
 
 // 正常系
@@ -36,16 +38,16 @@ func TestMoveToParentDirNormal(t *testing.T) {
 
 	moveToParentDir(tmpDir, dir1)
 
-	if !fileExists(move1) {
+	if !s2file.Exists(move1) {
 		t.Error("move1失敗")
 	}
-	if !fileExists(move2) {
+	if !s2file.Exists(move2) {
 		t.Error("move2失敗")
 	}
-	if !fileExists(move3) {
+	if !s2file.Exists(move3) {
 		t.Error("move3失敗")
 	}
-	if fileExists(dir1) {
+	if s2file.Exists(dir1) {
 		t.Error("dir1失敗")
 	}
 }
@@ -83,25 +85,25 @@ func TestMoveToParentDirExist(t *testing.T) {
 
 	moveToParentDir(tmpDir, dir1)
 
-	if !fileExists(move1) {
+	if !s2file.Exists(move1) {
 		t.Error("move1失敗")
 	}
-	if !fileExists(move2) {
+	if !s2file.Exists(move2) {
 		t.Error("move2失敗")
 	}
-	if !fileExists(move3) {
+	if !s2file.Exists(move3) {
 		t.Error("move3失敗")
 	}
-	if !fileExists(exist1) {
+	if !s2file.Exists(exist1) {
 		t.Error("exist1失敗")
 	}
-	if !fileExists(exist2) {
+	if !s2file.Exists(exist2) {
 		t.Error("exist2失敗")
 	}
-	if !fileExists(dir1) {
+	if !s2file.Exists(dir1) {
 		t.Error("dir1失敗")
 	}
-	if fileExists(dir3) {
+	if s2file.Exists(dir3) {
 		t.Error("dir3失敗")
 	}
 }
@@ -141,31 +143,31 @@ func TestMoveToParentDirDuplicate(t *testing.T) {
 
 	moveToParentDir(tmpDir, dir1)
 
-	if !fileExists(move1) {
+	if !s2file.Exists(move1) {
 		t.Error("move1失敗")
 	}
-	if !fileExists(move2) {
+	if !s2file.Exists(move2) {
 		t.Error("move2失敗")
 	}
-	if !fileExists(move3) {
+	if !s2file.Exists(move3) {
 		t.Error("move3失敗")
 	}
-	if !fileExists(move4) {
+	if !s2file.Exists(move4) {
 		t.Error("move4失敗")
 	}
-	if !fileExists(dup1) {
+	if !s2file.Exists(dup1) {
 		t.Error("dup1失敗")
 	}
-	if fileExists(dup2) {
+	if s2file.Exists(dup2) {
 		t.Error("dup2失敗")
 	}
-	if !fileExists(dir1) {
+	if !s2file.Exists(dir1) {
 		t.Error("dir1失敗")
 	}
-	if fileExists(dir2) {
+	if s2file.Exists(dir2) {
 		t.Error("dir2失敗")
 	}
-	if fileExists(dir3) {
+	if s2file.Exists(dir3) {
 		t.Error("dir3失敗")
 	}
 }

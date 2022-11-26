@@ -6,18 +6,14 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/saasan/go-dir"
+	"github.com/saasan/go-s2dir"
+	"github.com/saasan/go-s2file"
 	"github.com/saasan/go-term"
 )
 
-func fileExists(filename string) bool {
-	_, err := os.Stat(filename)
-	return err == nil
-}
-
 func moveToParentDir(parent string, dirname string) error {
 	// サブディレクトリとファイルを列挙
-	dirs, files, err := dir.Read(dirname)
+	dirs, files, err := s2dir.Read(dirname)
 	if err != nil {
 		return err
 	}
@@ -35,16 +31,14 @@ func moveToParentDir(parent string, dirname string) error {
 		oldpath := filepath.Join(dirname, file.Name())
 		newpath := filepath.Join(parent, file.Name())
 
-		if oldpath == newpath || fileExists(newpath) {
+		if oldpath == newpath {
 			continue
 		}
 
-		if err := os.Rename(oldpath, newpath); err != nil {
-			return err
-		}
+		s2file.Rename(oldpath, newpath)
 	}
 
-	isEmpty, err := dir.IsEmpty(dirname)
+	isEmpty, err := s2dir.IsEmpty(dirname)
 	if err != nil {
 		return err
 	}
@@ -67,7 +61,7 @@ func main() {
 		fmt.Printf("処理対象: %s\n", arg)
 
 		// サブディレクトリを列挙
-		dirs, _, err := dir.Read(arg)
+		dirs, _, err := s2dir.Read(arg)
 		if err != nil {
 			continue
 		}
